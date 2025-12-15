@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{ VULTURE } THE BRAND🦅ORIGINAL™</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cricket: {
+                            green: {
+                                400: '#4a7c2c',
+                                500: '#2d5016',
+                                600: '#1a3009',
+                            },
+                            red: {
+                                400: '#e63946',
+                                500: '#c8102e',
+                                600: '#a00d24',
+                            },
+                            gold: {
+                                400: '#ffd700',
+                                500: '#ffb700',
+                                600: '#ff9500',
+                            },
+                        },
+                    },
+                    boxShadow: {
+                        'stadium': '0 0 40px rgba(255, 215, 0, 0.3)',
+                        'ball': '0 0 20px rgba(200, 16, 46, 0.5)',
+                        'pitch': '0 0 30px rgba(74, 124, 44, 0.4)',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a1f0a 0%, #051005 50%, #0a1f0a 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Stadium Lights Effect */
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            animation: floodlight 8s ease-in-out infinite;
+            background-color: #000000;
+        }
+
+        @keyframes floodlight {
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }
+
+        /* Cricket Pitch Texture */
+
+        .pitch-texture {
+            background: linear-gradient(90deg, rgba(74, 124, 44, 0.1) 1px, transparent 1px), linear-gradient(rgba(74, 124, 44, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .glass-card {
+            background: rgba(15, 30, 15, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(74, 124, 44, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+        }
+
+        .profile-ring {
+            box-shadow: 0 0 0 4px rgba(74, 124, 44, 0.6), 0 0 0 8px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
+            animation: ringPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes ringPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 0 4px rgba(74, 124, 44, 0.6), 0 0 0 8px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 0 4px rgba(74, 124, 44, 0.8), 0 0 0 8px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        .cricket-ball {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #c8102e);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(200, 16, 46, 0.6);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .cricket-ball::before,
+        .cricket-ball::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+        }
+
+        .cricket-ball::before {
+            width: 2px;
+            height: 100%;
+            left: 48%;
+            transform: rotate(15deg);
+        }
+
+        .cricket-ball::after {
+            width: 2px;
+            height: 100%;
+            left: 48%;
+            transform: rotate(-15deg);
+        }
+
+        .stadium-glow {
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+            animation: stadiumPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes stadiumPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        .trophy-icon {
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #4a7c2c 0%, #2d5016 50%, #c8102e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .scoreboard {
+            background: linear-gradient(135deg, rgba(26, 48, 9, 0.9) 0%, rgba(15, 30, 15, 0.9) 100%);
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .stat-number {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .feature-icon-bg {
+            background: radial-gradient(circle, rgba(74, 124, 44, 0.3) 0%, transparent 70%);
+        }
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '711416814760344');
+        fbq('init', '1391608752322504');
+        fbq('track', 'PageView');
+    </script>
+
+    <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=711416814760344&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1391608752322504&ev=PageView&noscript=1" />
+</noscript>
+    <!-- End Meta Pixel Code -->
+
+</head>
+
+<body class="text-white flex items-center justify-center p-4 pitch-texture">
+    <!-- Animated Cricket Ball -->
+    <div class="cricket-ball" id="cricketBall"></div>
+
+    <div class="container max-w-md mx-auto relative z-10">
+        <!-- Profile Section -->
+        <div class="flex flex-col items-center mb-8 pt-6">
+            <div class="profile-ring rounded-full p-1 mb-4">
+                <img src="img/vipin-sing.jpg" alt="{ VULTURE } THE BRAND🦅ORIGINAL™" class="w-28 h-28 rounded-full object-cover border-4 border-cricket-green-600">
+            </div>
+            <h1 class="text-3xl font-bold mb-2 text-cricket-gold-400" style="font-family: 'Rajdhani', sans-serif; text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);">
+                { VULTURE } THE BRAND🦅ORIGINAL™
+            </h1>
+            <div class="flex items-center text-cricket-gold-400 mb-2">
+                <i data-feather="users" class="w-5 h-5 mr-2"></i>
+                <span class="font-semibold">1M+ Active Members</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-3 py-1 bg-cricket-green-500/30 rounded-full text-xs border border-cricket-gold-400/30">
+                    🏆 Premium Analyst
+                </span>
+                <span class="px-3 py-1 bg-cricket-red-500/30 rounded-full text-xs border border-cricket-gold-400/30">
+                    ⚡ Live Updates
+                </span>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-2 gap-3 mb-8">
+
+            <div class="glass-card rounded-xl p-4 text-center border-2 border-cricket-red-500/30 hover:border-cricket-gold-400/50 width-full">
+                <div class="text-cricket-red-400 font-bold text-2xl mb-1 stat-number">96%</div>
+                <div class="text-xs text-gray-300 font-medium">Win Rate</div>
+            </div>
+            <div class="glass-card rounded-xl p-4 text-center border-2 border-cricket-green-500/30 hover:border-cricket-gold-400/50">
+                <div class="text-cricket-gold-400 font-bold text-2xl mb-1 stat-number">4.1★</div>
+                <div class="text-xs text-gray-300 font-medium">Rating</div>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="https://t.me/+6tAUHQuS7T9kNTY1" target="_blank" class="block w-full cta-button text-white font-bold py-5 px-6 rounded-xl mb-8 transition-all duration-300 no-underline relative overflow-hidden stadium-glow">
+            <div class="flex items-center justify-center relative z-10">
+                <i data-feather="send" class="w-6 h-6 mr-3"></i>
+                <span class="text-lg">Join Telegram Channel</span>
+            </div>
+        </a>
+
+
+
+        <!-- Trust Badges -->
+        <div class="glass-card rounded-xl p-6 mb-8 text-center border-2 border-cricket-gold-400/30">
+            <div class="flex items-center justify-center gap-6 flex-wrap">
+                <div class="flex flex-col items-center">
+                    <i data-feather="check-circle" class="text-cricket-green-400 w-8 h-8 mb-2 trophy-icon"></i>
+                    <span class="text-xs text-gray-300">Verified</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-feather="lock" class="text-cricket-gold-400 w-8 h-8 mb-2 trophy-icon"></i>
+                    <span class="text-xs text-gray-300">Secure</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-feather="trending-up" class="text-cricket-red-400 w-8 h-8 mb-2 trophy-icon"></i>
+                    <span class="text-xs text-gray-300">Profitable</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i data-feather="star" class="text-cricket-gold-400 w-8 h-8 mb-2 trophy-icon"></i>
+                    <span class="text-xs text-gray-300">Top Rated</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-gray-400 text-xs pb-6">
+            <p>© 2025 vipin-singh . All rights reserved.</p>
+            <p class="mt-2">🏏 Professional Cricket Analysis</p>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const nextMatch = new Date();
+            nextMatch.setDate(now.getDate() + 1);
+            nextMatch.setHours(14, 30, 0, 0);
+
+            const diff = nextMatch - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Cricket Ball Animation
+        const ball = document.getElementById('cricketBall');
+        anime({
+            targets: ball,
+            translateX: [{
+                    value: window.innerWidth * 0.2,
+                    duration: 2000
+                },
+                {
+                    value: window.innerWidth * 0.8,
+                    duration: 2000
+                },
+                {
+                    value: window.innerWidth * 0.2,
+                    duration: 2000
+                }
+            ],
+            translateY: [{
+                    value: -100,
+                    duration: 1000,
+                    easing: 'easeOutQuad'
+                },
+                {
+                    value: window.innerHeight * 0.3,
+                    duration: 1000,
+                    easing: 'easeInQuad'
+                },
+                {
+                    value: -50,
+                    duration: 1000,
+                    easing: 'easeOutQuad'
+                },
+                {
+                    value: window.innerHeight * 0.5,
+                    duration: 1000,
+                    easing: 'easeInQuad'
+                },
+                {
+                    value: -100,
+                    duration: 1000,
+                    easing: 'easeOutQuad'
+                },
+                {
+                    value: window.innerHeight * 0.2,
+                    duration: 1000,
+                    easing: 'easeInQuad'
+                }
+            ],
+            rotate: '1turn',
+            loop: true,
+            easing: 'linear'
+        });
+
+        // Card Animations on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            anime({
+                targets: '.glass-card',
+                translateY: [30, 0],
+                opacity: [0, 1],
+                duration: 1000,
+                delay: anime.stagger(150),
+                easing: 'easeOutExpo'
+            });
+
+            anime({
+                targets: '.profile-ring',
+                scale: [0.8, 1],
+                opacity: [0, 1],
+                duration: 1200,
+                easing: 'easeOutElastic(1, .6)'
+            });
+
+            anime({
+                targets: '.cta-button',
+                scale: [0.95, 1],
+                opacity: [0, 1],
+                duration: 800,
+                delay: 400,
+                easing: 'easeOutQuad'
+            });
+        });
+    </script>
+</body>
+
+</html>
